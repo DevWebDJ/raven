@@ -10,10 +10,11 @@ def get_open_ai_client():
 
 	raven_settings = frappe.get_cached_doc("Raven Settings")
 
-	if not raven_settings.enable_ai_integration:
+	if not raven_settings.enable_ai_integration and not raven_settings.enable_openrouter_integration:
 		frappe.throw(_("AI Integration is not enabled"))
 
 	openai_api_key = raven_settings.get_password("openai_api_key")
+	openrouter_api_key = raven_settings.get_password("openrouter_api_key")
 
 	if raven_settings.openai_project_id:
 		client = OpenAI(

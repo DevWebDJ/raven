@@ -1,0 +1,31 @@
+{
+    "fields": [
+        {
+            "fieldname": "enable_openrouter_integration",
+            "fieldtype": "Check",
+            "label": "Enable OpenRouter Integration",
+            "insert_after": "enable_ai_integration"
+        },
+        {
+            "fieldname": "openrouter_api_key",
+            "fieldtype": "Password",
+            "label": "OpenRouter API Key",
+            "insert_after": "enable_openrouter_integration",
+            "depends_on": "eval:doc.enable_openrouter_integration"
+        },
+        {
+            "fieldname": "openrouter_http_referer",
+            "fieldtype": "Data",
+            "label": "OpenRouter HTTP Referer",
+            "insert_after": "openrouter_api_key",
+            "depends_on": "eval:doc.enable_openrouter_integration"
+        },
+        {
+            "fieldname": "openrouter_app_name",
+            "fieldtype": "Data",
+            "label": "OpenRouter Application Name",
+            "insert_after": "openrouter_http_referer",
+            "depends_on": "eval:doc.enable_openrouter_integration"
+        }
+    ]
+}
