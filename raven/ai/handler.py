@@ -19,6 +19,7 @@ from raven.ai.functions import (
 	update_documents,
 )
 from raven.ai.openai_client import get_open_ai_client
+from raven.ai.openrouter_client import get_openrouter_client
 
 
 def stream_response(ai_thread_id: str, bot, channel_id: str):
